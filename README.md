@@ -3,7 +3,7 @@ E-commerce Platform Scraper with Asynchronous Processing
 
 Description
 
-This project is a web scraper for a selected Japanese e-commerce platform, developed using Django, Scrapy, and Celery. It scrapes product data, including title, description, selling status, and condition. The project features asynchronous task processing with Celery, error handling, and logging. Bonus features include RabbitMQ integration for task queue management and Docker for containerization. It also supports pagination to scrape multiple pages of product listings.
+This project is a web scraper for a selected Japanese e-commerce platform, developed using Django, Scrapy, and Celery. It scrapes product data, including title, description, selling status, and condition. The project features asynchronous task processing with Celery, error handling, and logging.It also supports pagination to scrape multiple pages of product listings.
 
 Technologies Used
 
