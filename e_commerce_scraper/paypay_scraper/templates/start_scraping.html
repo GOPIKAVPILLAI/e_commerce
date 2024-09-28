@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Scraping</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">E-commerce Scraping</h2>
+
+        <!-- Button to start scraping -->
+        <button id="start-scraping-btn" class="btn btn-primary">Start Scraping</button>
+
+        <!-- Loading message -->
+        <div id="loading-message" class="mt-3" style="display: none;">
+            <p>Scraping in progress, please wait...</p>
+        </div>
+
+        <!-- Scraping success message -->
+        <div id="success-message" class="mt-3 alert alert-success" style="display: none;">
+            Scraping started successfully! <br>
+            You can check the <a href="/results/" class="alert-link">scraped products</a> once done.
+        </div>
+
+        <!-- Error message -->
+        <div id="error-message" class="mt-3 alert alert-danger" style="display: none;">
+            An error occurred while starting the scraping process.
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#start-scraping-btn').click(function() {
+                // Hide previous messages
+                $('#success-message').hide();
+                $('#error-message').hide();
+
+                // Show loading message
+                $('#loading-message').show();
+
+                // Send an AJAX request to trigger the scraping process
+                $.ajax({
+                    url: '/trigger-scraping/',
+                    method: 'GET',
+                    success: function(response) {
+                        $('#loading-message').hide();
+                        if (response.status === 'Scraping started successfully!') {
+                            $('#success-message').show();
+                        }
+                    },
+                    error: function() {
+                        $('#loading-message').hide();
+                        $('#error-message').show();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
