@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from paypay_scraper import views
+from rakuma_scraper import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),

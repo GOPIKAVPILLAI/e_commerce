@@ -11,7 +11,6 @@ class RakumaSpider(scrapy.Spider):
             with open("myfile.txt", "a") as f:
                 title = product.css('a::attr(title)').get()
                 desc=product.css('a::attr(onclick)').get()
-                # if title:
                 f.write(f"title={title}\ndesc={desc}\n\n")
             item=ProductItem()
             

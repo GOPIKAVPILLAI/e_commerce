@@ -13,7 +13,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'paypay_scraper',
+    'rakuma_scraper',
 ]
 
 MIDDLEWARE = [
